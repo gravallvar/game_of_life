@@ -7,8 +7,14 @@ import (
 var deadStyle = ui.NewStyle(ui.ColorClear)
 var aliveStyle = ui.NewStyle(ui.ColorClear, ui.ColorCyan)
 
-func getCellStyle(c bool) ui.Style {
-	if c {
+type cell struct {
+	alive bool
+	x     int
+	y     int
+}
+
+func (c cell) getStyle() ui.Style {
+	if c.alive {
 		return aliveStyle
 	}
 
