@@ -5,16 +5,11 @@ import (
 )
 
 var deadStyle = ui.NewStyle(ui.ColorClear)
-var aliveStyle = ui.NewStyle(ui.ColorClear, ui.ColorCyan)
+var aliveStyle = ui.NewStyle(ui.ColorClear, ui.ColorGreen)
 
-type cell struct {
-	alive bool
-	x     int
-	y     int
-}
-
-func (c cell) getStyle() ui.Style {
-	if c.alive {
+// getCellStyle returns the appropriate style for a given cell state.
+func getCellStyle(alive bool) ui.Style {
+	if alive {
 		return aliveStyle
 	}
 
