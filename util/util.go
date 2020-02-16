@@ -9,7 +9,7 @@ import (
 
 // GetRandomCellState returns a random bool.
 // The chance of the bool being true is a value convenient for generating a
-// random matrix of cells that does over or underpopulate the matrix.
+// random matrix of cells that doesn't over or underpopulate the matrix.
 func GetRandomCellState() bool {
 	rand.Seed(time.Now().UnixNano())
 	return rand.Intn(100)%3 == 0
